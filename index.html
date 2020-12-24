@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+</head>
+<body>
+
+    <h2 align="center">Quiz</h2>
+    <h3 align="center">click on Get Started to get new question</h3>
+
+    <div>
+
+        <button onclick="loadDoc1()" id="m">Get Started</button>
+        <div id="quiz">
+            <div id="question">
+
+            </div>
+            <div id="options">
+             <span>A</span><input type="radio" name="same" id="a" value="a" ><span id="1"></span><br>
+             <span>B</span><input type="radio" name="same" id="b" value="b" ><span id="2"></span><br>
+             <span>C</span><input type="radio" name="same" id="c" value="c" ><span id="3"></span><br>
+             <span>D</span><input type="radio" name="same" id="d" value="d" ><span id="4"></span><br>
+            </div>
+            <button onclick="check()">submit</button>
+        </div>
+        <h2 id="result"></h2>
+        <h3 id="correctanswer"></h3>
+    </div>
+    
+
+
+    <script src='test.js'></script>
+    
+</body>
+</html>

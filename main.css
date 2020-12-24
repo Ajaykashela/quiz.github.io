@@ -1,0 +1,15 @@
+#quiz{
+    display: none;
+    margin: 10px;
+}
+button,input{
+    margin-top: 10px;
+}
+#m{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#result{
+    color: red;
+}
