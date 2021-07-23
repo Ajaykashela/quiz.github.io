@@ -3,14 +3,22 @@ let a = document.getElementById("1");
 let b = document.getElementById("2");
 let c = document.getElementById("3");
 let d = document.getElementById("4");
+let next = document.getElementById("m");
+let wronganswer = document.getElementById("wronganswer");
+let rightanswer = document.getElementById("rightanswer");
 let correctanswer = document.getElementById("correctanswer");
 var g;
+var correctans=0;
+var wrongans=0;
 var answer;
 var result = document.getElementById("result");
 var option = [];
 
 
 function loadDoc1() {
+
+    m.innerText="Next";
+    document.getElementById("heading").innerHTML="Click on <b>Next</b> to see next question";
 
     question.innerText="";
     a.innerText="";
@@ -37,7 +45,7 @@ function loadDoc1() {
 
             document.getElementById("quiz").style.display="block";
 
-            question.innerText=mydata.results[0].question;
+            question.innerHTML=mydata.results[0].question;
 
             g = Math.round(Math.random()*3);
 
@@ -47,9 +55,6 @@ function loadDoc1() {
             else if(g==1){ answer = "b"; }
             else if(g==2){ answer = "c"; }
             else if(g==3){ answer = "d"; }
-
-
-            
 
 
             for(var i=0;i<4;i++){
@@ -64,10 +69,10 @@ function loadDoc1() {
             console.log(mydata.results[0].correct_answer);
             console.log(option);
 
-            a.innerText=option[0];
-            b.innerText=option[1];
-            c.innerText=option[2];
-            d.innerText=option[3];
+            a.innerHTML=option[0];
+            b.innerHTML=option[1];
+            c.innerHTML=option[2];
+            d.innerHTML=option[3];
 
 
         }
@@ -85,16 +90,20 @@ function check(){
             value = radios[i].value;   
             console.log(value); 
             console.log(answer);  
-            
+            document.getElementById("response").style.display="block";
             if(value==answer){
                 result.style.color="green";
                 correctanswer.style.color="green";
                 result.innerText="your answer is correct!!!";
+                correctans++;
+                rightanswer.innerHTML="Right Answer &nbsp; : "+correctans;
             }
             else{
                 result.style.color="red";
                 correctanswer.style.color="red";
                 result.innerText="your answer is incorrect!!!";
+                wrongans++;
+                wronganswer.innerText="Wrong Answer : "+wrongans;
             }
             correctanswer.innerText="correct answer is : " + answer;
         }
