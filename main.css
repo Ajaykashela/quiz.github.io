@@ -7,10 +7,13 @@
 button,input{
     margin-top: 10px;
 }
+#buttonDiv{
+    display: block;
+    margin:  10px;
+}
 #m{
-    width: 98.5%;
+    width: 100%;
     display: flex;
-    margin-left: 10px;
     height: 30px;
     border: 2px solid black;
     justify-content: center;
