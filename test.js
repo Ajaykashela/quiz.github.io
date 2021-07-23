@@ -17,6 +17,7 @@ var option = [];
 
 function loadDoc1() {
 
+    document.getElementById("submit").disabled=false;
     m.innerText="Next";
     document.getElementById("heading").innerHTML="Click on <b>Next</b> to see next question";
 
@@ -82,6 +83,7 @@ function loadDoc1() {
 }
 
 function check(){
+    document.getElementById("submit").disabled=true;
     var radios = document.getElementsByTagName('input');
     var value;
     for (var i = 0; i < radios.length; i++) {
@@ -92,6 +94,7 @@ function check(){
             console.log(answer);  
             document.getElementById("response").style.display="block";
             if(value==answer){
+                console.log("in right answer");
                 result.style.color="green";
                 correctanswer.style.color="green";
                 result.innerText="your answer is correct!!!";
@@ -99,6 +102,7 @@ function check(){
                 rightanswer.innerHTML="Right Answer &nbsp; : "+correctans;
             }
             else{
+                console.log("in wrong answer");
                 result.style.color="red";
                 correctanswer.style.color="red";
                 result.innerText="your answer is incorrect!!!";
